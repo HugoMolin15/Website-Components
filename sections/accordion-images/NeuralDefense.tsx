@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 
-const AccordionImages: React.FC = () => {
+
+const NeuralDefense: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const items = [
@@ -189,4 +190,4 @@ const AccordionImages: React.FC = () => {
     );
 };
 
-export default AccordionImages;
+export default NeuralDefense;
