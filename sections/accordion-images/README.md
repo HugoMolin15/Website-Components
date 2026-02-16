@@ -1,5 +1,5 @@
 
-# Neural Defense Section
+# Accordion images section
 
 A sleek two-column section featuring an interactive accordion on the left (or bottom on mobile) and a dynamic image placeholder area on the right. When an accordion item is selected, the corresponding placeholder image updates with a smooth transition.
 
