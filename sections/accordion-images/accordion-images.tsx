@@ -160,7 +160,7 @@ const NeuralDefense: React.FC = () => {
                             onClick={() => setActiveIndex(index)}
                         >
                             <div className="flex items-center gap-4">
-                                <span className={`material-icons text-[20px] transition-colors ${activeIndex === index ? 'text-[#0D1B1E]' : 'text-gray-400'}`}>
+                                <span className={`material-icons text-[20px] transition-colors duration-300 ease-in-out ${activeIndex === index ? 'text-[#0D1B1E]' : 'text-gray-400 group-hover:text-[#0D1B1E]'}`}>
                                     {item.icon}
                                 </span>
                                 <h3 className="text-[16px] font-medium text-[#0D1B1E]">
