@@ -42,8 +42,8 @@ const Icon: React.FC<IconInternalProps> = ({
     // Motion values for the icon's position, with spring physics for smooth movement
     const x = useMotionValue(0);
     const y = useMotionValue(0);
-    const springX = useSpring(x, { stiffness: 300, damping: 20 });
-    const springY = useSpring(y, { stiffness: 300, damping: 20 });
+    const springX = useSpring(x, { stiffness: 100, damping: 30 });
+    const springY = useSpring(y, { stiffness: 100, damping: 30 });
 
     React.useEffect(() => {
         const handleMouseMove = () => {

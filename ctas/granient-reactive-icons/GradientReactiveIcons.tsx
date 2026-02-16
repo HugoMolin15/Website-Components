@@ -46,7 +46,7 @@ const defaultIcons = [
 
 export const GradientReactiveIconsCTA = () => {
     return (
-        <div className="relative w-full rounded-[32px] overflow-hidden bg-[#1a0f3e] max-w-7xl mx-auto my-20">
+        <div className="relative w-[calc(100%-32px)] md:w-full rounded-[32px] overflow-hidden bg-[#1a0f3e] max-w-7xl mx-auto my-20">
             {/* Background Layer */}
             <div className="absolute -inset-[1px] z-0">
                 <Grainient
@@ -88,10 +88,10 @@ export const GradientReactiveIconsCTA = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto relative z-20">
-                    <button className="bg-white hover:bg-gray-100 text-[#0D1B1E] px-12 py-5 rounded-full text-[14px] font-bold transition-all shadow-xl active:scale-95">
+                    <button className="cursor-pointer bg-white hover:bg-gray-100 text-[#0D1B1E] px-12 py-5 rounded-full text-[14px] font-bold transition-all shadow-xl active:scale-95">
                         Initialize Defense
                     </button>
-                    <button className="bg-[#0D1B1E] border border-[#0D1B1E] hover:bg-black text-white px-12 py-5 rounded-full text-[14px] font-bold transition-all shadow-xl active:scale-95">
+                    <button className="cursor-pointer bg-[#0D1B1E] border border-[#0D1B1E] hover:bg-black text-white px-12 py-5 rounded-full text-[14px] font-bold transition-all shadow-xl active:scale-95">
                         Speak with an Analyst
                     </button>
                 </div>
