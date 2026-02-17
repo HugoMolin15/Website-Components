@@ -29,7 +29,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ plans }) => {
 
     // Simple check icon for all features
     const getFeatureIcon = () => {
-        return <Check className="size-3 text-foreground" />
+        return <Check className="size-3 text-black" />
     }
 
     const containerVariants = {
@@ -144,7 +144,7 @@ const PricingTable: React.FC<PricingTableProps> = ({ plans }) => {
             `}>
                             {/* Plan Header */}
                             <div className="text-center space-y-4 mb-8">
-                                <h3 className="text-2xl font-bold text-foreground">{plan.title}</h3>
+                                <h3 className="text-2xl font-bold text-black">{plan.title}</h3>
                                 <p className="text-muted-foreground">{plan.description}</p>
 
                                 {/* Price - Direct Rendering for "Normal" Look */}
@@ -176,21 +176,23 @@ const PricingTable: React.FC<PricingTableProps> = ({ plans }) => {
                             </div>
 
                             {/* Features List - Flex Grow to push button down */}
-                            <div className="space-y-4 mb-8 flex-1">
-                                {plan.features.map((feature, featureIndex) => (
-                                    <motion.div
-                                        key={feature}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.6 + index * 0.1 + featureIndex * 0.05 }}
-                                        className="flex items-center gap-3"
-                                    >
-                                        <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                                            {getFeatureIcon()}
-                                        </div>
-                                        <span className="text-sm text-foreground">{feature}</span>
-                                    </motion.div>
-                                ))}
+                            <div className="mb-8 flex-1 flex flex-col items-center">
+                                <div className="space-y-4 w-fit">
+                                    {plan.features.map((feature, featureIndex) => (
+                                        <motion.div
+                                            key={feature}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.6 + index * 0.1 + featureIndex * 0.05 }}
+                                            className="flex items-center gap-3 text-left"
+                                        >
+                                            <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                                                {getFeatureIcon()}
+                                            </div>
+                                            <span className="text-sm text-black">{feature}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
 
                             {/* CTA Button */}
@@ -203,7 +205,9 @@ const PricingTable: React.FC<PricingTableProps> = ({ plans }) => {
                                     asChild
                                     variant={plan.isFeatured ? "default" : "outline"}
                                     size="lg"
-                                    className={`w-full ${plan.isFeatured ? 'bg-black text-white hover:bg-black/90' : 'border-black text-black hover:bg-black/5'}`}
+                                    className={`w-full transition-all duration-300 ${plan.isFeatured
+                                        ? 'bg-black text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-black'
+                                        : 'bg-white border-2 border-black text-black hover:bg-black hover:text-white shadow-none'}`}
                                 >
                                     <a href={plan.ctaHref}>
                                         {plan.ctaText}
