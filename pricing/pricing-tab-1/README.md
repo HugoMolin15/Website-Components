@@ -14,14 +14,36 @@ A modern, clean pricing section with monthly/yearly toggle and featured plan hig
 npm install framer-motion lucide-react @radix-ui/react-slot @radix-ui/react-tabs class-variance-authority tailwind-merge clsx
 ```
 
-### 2. Add Tailwind Config
+### 2. Add Tailwind Config & Styles
 
-Ensure your `tailwind.config.js` or CSS file includes the `aurora` animation:
+The component relies on specific color variables. Add the following to your `globals.css` or import the provided `styles.css`:
 
 ```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 21%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 21%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 0% 70%;
+  --radius: 0.75rem;
+}
+
 @theme inline {
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
-
   @keyframes aurora {
     0% {
       background-position: 0% 50%;
